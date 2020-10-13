@@ -93,7 +93,7 @@ namespace Tictactoe
             int head = 1;
             int tail = 2;
             Random random = new Random();
-            int toss = random.Next(1, 2);
+            int toss = random.Next(1, 3);
             if (toss == head)
             {
                 Console.WriteLine("Start player is User");
