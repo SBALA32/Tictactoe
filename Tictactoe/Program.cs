@@ -73,7 +73,6 @@ namespace Tictactoe
         }
         static void chkposition(char[,] board, int row, int col)
         {
-            //throw new NotImplementedException();
             int c = col - 1;
             int r = row - 1;
             char v = Convert.ToChar(" ");
