@@ -9,12 +9,16 @@ namespace Tictactoe
             char[,] board = new char[3, 3];
             Initialize(board);
             print(board);
+            for (int i= 0;i < 9;i++)
+            {
+                chkplr(board);
+            }
         }
         static void Initialize(char[,] board)
         {
-            for (int row = 0; row < 3; row++)
+            for (int row = 1; row <= 3; row++)
             {
-                for (int col = 0; col < 3; col++)
+                for (int col = 1; col <= 3; col++)
                 {
                     board[row, col] = ' ';
                 }
@@ -22,16 +26,26 @@ namespace Tictactoe
         }
         static void print(char[,] board)
         {
-            for (int row = 0; row < 3; row++)
+            for (int row = 1; row <= 3; row++)
             {
                 Console.Write("| ");
-                for (int col = 0; col < 3; col++)
+                for (int col = 1; col <= 3; col++)
                 {
                     Console.Write(board[row, col]);
                     Console.Write(" | ");
                 }
                 Console.WriteLine();
             }
+        }
+        static void chkplr(char[,] board)
+        {
+            Console.WriteLine("Enter player");
+            int plr = Convert.ToInt32(Console.ReadLine());
+            if (plr == 1)
+                takeinput1(board);
+            else
+                takeinput2(board);
+            print(board);
         }
     }
 }
