@@ -101,7 +101,7 @@ namespace Tictactoe
             }
             else
             {
-                Console.WriteLine("Start player is User");
+                Console.WriteLine("Start player is Computer");
                 takeinput2(board);
             }
         }
