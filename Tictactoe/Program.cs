@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Tictactoe
 {
@@ -43,8 +45,10 @@ namespace Tictactoe
             int plr = Convert.ToInt32(Console.ReadLine());
             if (plr == 1)
                 takeinput1(board);
-            else
+            else if (plr == 2)
                 takeinput2(board);
+            else
+                Console.WriteLine("Invalid Player");
             print(board);
         }
         static void takeinput1(char[,] board)
@@ -54,6 +58,7 @@ namespace Tictactoe
             int row = Convert.ToInt32(Console.ReadLine());
             Console.Write("Please enter col : ");
             int col = Convert.ToInt32(Console.ReadLine());
+            chkposition(board, row, col);
             board[row - 1, col - 1] = player;
         }
         static void takeinput2(char[,] board)
@@ -63,7 +68,24 @@ namespace Tictactoe
             int row = Convert.ToInt32(Console.ReadLine());
             Console.Write("Please enter col : ");
             int col = Convert.ToInt32(Console.ReadLine());
+            chkposition(board, row, col);
             board[row - 1, col - 1] = player;
+        }
+        static void chkposition(char[,] board, int row, int col)
+        {
+            //throw new NotImplementedException();
+            int c = col - 1;
+            int r = row - 1;
+            char v = Convert.ToChar(" ");
+            if (board[r, c] == v)
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Occupied Position");
+                chkplr(board);
+            }
         }
     }
 }
