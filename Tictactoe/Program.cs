@@ -47,5 +47,23 @@ namespace Tictactoe
                 takeinput2(board);
             print(board);
         }
+        static void takeinput1(char[,] board)
+        {
+            char player = 'x';
+            Console.Write("Please enter row : ");
+            int row = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please enter col : ");
+            int col = Convert.ToInt32(Console.ReadLine());
+            board[row - 1, col - 1] = player;
+        }
+        static void takeinput2(char[,] board)
+        {
+            char player = 'o';
+            Console.Write("Please enter row : ");
+            int row = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please enter col : ");
+            int col = Convert.ToInt32(Console.ReadLine());
+            board[row - 1, col - 1] = player;
+        }
     }
 }
