@@ -11,7 +11,8 @@ namespace Tictactoe
             char[,] board = new char[3, 3];
             Initialize(board);
             print(board);
-            for (int i= 0;i < 9;i++)
+            toss(board);
+            for (int i= 1;i < 9;i++)
             {
                 chkplr(board);
             }
@@ -49,7 +50,6 @@ namespace Tictactoe
                 takeinput2(board);
             else
                 Console.WriteLine("Invalid Player");
-            print(board);
         }
         static void takeinput1(char[,] board)
         {
@@ -60,6 +60,7 @@ namespace Tictactoe
             int col = Convert.ToInt32(Console.ReadLine());
             chkposition(board, row, col);
             board[row - 1, col - 1] = player;
+            print(board);
         }
         static void takeinput2(char[,] board)
         {
@@ -70,6 +71,7 @@ namespace Tictactoe
             int col = Convert.ToInt32(Console.ReadLine());
             chkposition(board, row, col);
             board[row - 1, col - 1] = player;
+            print(board);
         }
         static void chkposition(char[,] board, int row, int col)
         {
@@ -84,6 +86,23 @@ namespace Tictactoe
             {
                 Console.WriteLine("Occupied Position");
                 chkplr(board);
+            }
+        }
+        static void toss(char[,] board)
+        {
+            int head = 1;
+            int tail = 2;
+            Random random = new Random();
+            int toss = random.Next(1, 2);
+            if (toss == head)
+            {
+                Console.WriteLine("Start player is User");
+                takeinput1(board);
+            }
+            else
+            {
+                Console.WriteLine("Start player is User");
+                takeinput2(board);
             }
         }
     }
